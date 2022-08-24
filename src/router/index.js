@@ -33,11 +33,13 @@ const routes = [
 		component: PostCreateView,
 	},
 	{
-		// /user/alice
-		// /user/bruce -> PostDetailView
-		// /user/tom
 		path: '/posts/:id',
 		name: 'PostDetail',
+		props: route => {
+			return {
+				id: parseInt(route.params.id),
+			};
+		},
 		component: PostDetailView,
 	},
 	{
@@ -75,7 +77,7 @@ const routes = [
 ];
 
 const router = createRouter({
-	history: createWebHistory('/'),
+	history: createWebHistory(),
 	routes,
 });
 

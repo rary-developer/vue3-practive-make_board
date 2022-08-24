@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<h2>제목</h2>
-		<p>내용</p>
-		<p class="text-muted">2020-01-01</p>
+		<h2>{{ post.title }}</h2>
+		<p>{{ post.content }}</p>
+		<p class="text-muted">{{ post.createAt }}</p>
 		<hr class="my-4" />
 		<div class="row g-2">
 			<div class="col-auto">
@@ -21,21 +21,70 @@
 				</button>
 			</div>
 			<div class="col-auto">
-				<button class="btn btn-outline-danger">삭제</button>
+				<button class="btn btn-outline-danger" @click="remove">삭제</button>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script setup>
-import { useRoute, useRouter } from 'vue-router';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { getPostById, deletePost } from '../../api/posts';
 
-const route = useRoute();
+const props = defineProps({
+	id: Number,
+});
+
+//const route = useRoute();
 const router = useRouter();
 
-const id = route.params.id;
+//const id = route.params.id;
+/*
+ * ref
+ * 장) 객체 할당 가능, 일관성
+ * 단) form.value.title, form.value.content
+ *
+ * reactive
+ * 장) form.title, form.content
+ * 단) 객체 할당 불가능
+ */
+const post = ref({});
+//let form = reactive({});
+//reactive
+//console.log('post:', getPostById(id));
+
+const fetchPost = async () => {
+	try {
+		const { data } = await getPostById(props.id);
+		setPost(data);
+		//form.title = data.title;
+		//form.content = data.content;
+	} catch (error) {
+		console.error(error);
+	}
+};
+
+const setPost = ({ title, content, createAt }) => {
+	post.value.title = title;
+	post.value.content = content;
+	post.value.createAt = createAt;
+};
+
+fetchPost();
+const remove = async () => {
+	try {
+		if (confirm('삭제 하시겠습니까?')) {
+			await deletePost(props.id);
+			router.push({ name: 'PostList' });
+		}
+	} catch (error) {
+		console.error(error);
+	}
+};
 const goListPage = () => router.push({ name: 'PostList' });
-const goEditPage = () => router.push({ name: 'PostEdit', params: { id } });
+const goEditPage = () =>
+	router.push({ name: 'PostEdit', params: { id: props.id } });
 </script>
 
 <style lang="scss" scoped></style>

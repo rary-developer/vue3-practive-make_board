@@ -2,7 +2,7 @@
 	<div>
 		<h2>{{ post.title }}</h2>
 		<p>{{ post.content }}</p>
-		<p class="text-muted">{{ post.createAt }}</p>
+		<p class="text-muted">{{ post.createdAt }}</p>
 		<hr class="my-4" />
 		<div class="row g-2">
 			<div class="col-auto">
@@ -65,10 +65,10 @@ const fetchPost = async () => {
 	}
 };
 
-const setPost = ({ title, content, createAt }) => {
+const setPost = ({ title, content, createdAt }) => {
 	post.value.title = title;
 	post.value.content = content;
-	post.value.createAt = createAt;
+	post.value.createdAt = createdAt;
 };
 
 fetchPost();

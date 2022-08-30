@@ -23,6 +23,7 @@
     "eslint-plugin-vue": "^9.3.0",
     "json-server": "^0.17.0",
     "prettier": "^2.7.1",
+    "unplugin-vue-components": "^0.22.4",
     "vite": "^3.0.4"
   }
 }

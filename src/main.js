@@ -3,8 +3,16 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from '@/router';
+import objPlugins from './plugins/obj';
+import person from './plugins/person';
+//import globalComponents from './plugins/global-components';
 
-createApp(App).use(router).mount('#app');
+const app = createApp(App);
+//app.use(globalComponents);
+app.use(objPlugins, { name: '김태희' });
+app.use(person, { name: '홍길동' });
+app.use(router);
+app.mount('#app');
 import 'bootstrap/dist/js/bootstrap.js';
 
 // console.log('MODE:', import.meta.env.MODE);

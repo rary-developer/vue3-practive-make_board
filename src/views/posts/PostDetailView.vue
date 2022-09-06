@@ -3,6 +3,7 @@
 	<AppError v-else-if="error" :message="error.message" />
 	<div v-else>
 		<h2>{{ post.title }}</h2>
+		<p>id: {{ props.id }}, isOdd: {{ isOdd }}</p>
 		<p>{{ post.content }}</p>
 		<p class="text-muted">
 			{{ $dayjs(post.createdAt).format('YYYY.MM.DD HH:mm:ss') }}
@@ -48,10 +49,11 @@
 
 <script setup>
 //import { ref } from 'vue';
+import { computed, toRefs } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAlert } from '../../composables/alert';
+import { useNumber } from '../../composables/number';
 //import { deletePost } from '../../api/posts';
-const { vAlert, vSuccess } = useAlert();
 import { useAxios } from '../../hooks/useAxios';
 
 const props = defineProps({
@@ -60,7 +62,9 @@ const props = defineProps({
 
 //const route = useRoute();
 const router = useRouter();
-
+//const idRef = toRef(props, 'id');
+const { id: idRef } = toRefs(props);
+const { isOdd } = useNumber(idRef);
 //const id = route.params.id;
 /*
  * ref
@@ -74,8 +78,9 @@ const router = useRouter();
 //let form = reactive({});
 //reactive
 //console.log('post:', getPostById(id));
-
-const { error, loading, data: post } = useAxios(`/posts/${props.id}`);
+const { vAlert, vSuccess } = useAlert();
+const url = computed(() => `/posts/${props.id}`);
+const { error, loading, data: post } = useAxios(url);
 
 const {
 	error: removeError,

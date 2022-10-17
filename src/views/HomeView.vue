@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<h2>Home View</h2>
+		<!-- $route객체에서 메서드, 속성 가져오기 -->
 		<p>{{ $route.path }}</p>
 		<p>{{ $route.name }}</p>
 		<button class="btn btn-primary" @click="goAboutPage">About으로 이동</button>

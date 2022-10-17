@@ -1,3 +1,4 @@
+<!-- 레이아웃 컴포넌트 나누기 -->
 <template>
 	<header>
 		<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
@@ -59,6 +60,7 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 const goPage = () => {
 	router.push({
+		//페이지 이동(객체)
 		name: 'PostCreate',
 	});
 };

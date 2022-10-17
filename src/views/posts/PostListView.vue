@@ -117,6 +117,7 @@ const pageCount = computed(() =>
 
 const goPage = id => {
 	//router.push(`/posts/${id}`);
+	//data 는 params에 넣는다(객체)
 	router.push({
 		name: 'PostDetail',
 		params: {

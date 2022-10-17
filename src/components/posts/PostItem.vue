@@ -22,6 +22,7 @@
 import { computed } from 'vue';
 import { inject } from 'vue';
 
+//props 선언 -> defineProps
 const props = defineProps({
 	title: {
 		type: String,

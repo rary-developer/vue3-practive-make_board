@@ -1,5 +1,7 @@
 import { posts } from '.';
 
+//json data 조회하는 페이지
+
 export function getPosts(params) {
 	return posts.get('/', { params });
 }

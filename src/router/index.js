@@ -12,6 +12,7 @@ import NestedTwoView from '@/views/nested/NestedTwoView.vue';
 import NestedHomeView from '@/views/nested/NestedHomeView.vue';
 import MyPage from '@/views/MyPage.vue';
 
+// url에 따라 어떤 페이지를 보여줄지 매핑해주는 라이브러리
 const routes = [
 	{
 		path: '/',
@@ -96,8 +97,9 @@ function removeQueryString(to) {
 		return { path: to.path, query: {} };
 	}
 }
+
 const router = createRouter({
-	history: createWebHistory(),
+	history: createWebHistory('/'), //
 	routes,
 });
 

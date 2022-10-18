@@ -80,6 +80,9 @@ const { isOdd } = useNumber(idRef);
  * 단) 객체 할당 불가능
  */
 //let form = reactive({});
+// reactive로 선언하면 각자 할당해줘야한다
+// post.title = data.title..
+
 //reactive
 //console.log('post:', getPostById(id));
 const { vAlert, vSuccess } = useAlert();

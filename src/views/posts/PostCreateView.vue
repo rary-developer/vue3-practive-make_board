@@ -64,7 +64,11 @@ const { error, loading, execute } = useAxios(
 	},
 );
 const save = async () => {
-	execute({ ...form.value, createdAt: Date.now() });
+	try {
+		execute({ ...form.value, createdAt: Date.now() });
+	} catch (error) {
+		console.error(error);
+	}
 };
 
 // const save = async () => {

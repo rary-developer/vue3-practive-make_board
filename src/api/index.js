@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+//axios =>서버와 통신하기 위한 비동기 통신 모듈
 function create(baseURL, options) {
 	const instance = axios.create(Object.assign({ baseURL }, options));
 

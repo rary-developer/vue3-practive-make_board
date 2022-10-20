@@ -106,7 +106,10 @@ function removeQueryString(to) {
 }
 
 const router = createRouter({
-	history: createWebHistory('/'), //
+	//vue router를 통해 URL로 페이지를 전환할 때
+	//히스토리 관리 기법을 해시형으로 쓸수있게 해줌
+	history: createWebHistory('/'),
+	//history: createWebHashHistory(), //hash Mode
 	routes,
 });
 

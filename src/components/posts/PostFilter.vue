@@ -16,6 +16,7 @@
 					@input="$emit('update:limit', $event.target.value)"
 					class="form-select"
 				>
+					<!-- _limit 갯수 = 최대 출력갯수 -->
 					<option value="6">6개씩 보기</option>
 					<option value="12">12개씩 보기</option>
 					<option value="18">18개씩 보기</option>

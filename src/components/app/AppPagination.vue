@@ -1,3 +1,4 @@
+<!-- 페이징 구현 출처(bootstrap) -->
 <template>
 	<nav class="mt-5" aria-label="Page navigation example">
 		<ul class="pagination justify-content-center">

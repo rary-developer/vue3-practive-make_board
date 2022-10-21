@@ -2,6 +2,7 @@ import { posts } from '.';
 
 //json data 조회하는 페이지
 
+// ./api/index.js
 export function getPosts(params) {
 	//return axios.get('http://localhost:5000/posts');
 	return posts.get('/', { params });

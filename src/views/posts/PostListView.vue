@@ -72,6 +72,7 @@ const previewId = ref(null);
 const selectPreview = id => (previewId.value = id);
 
 const params = ref({
+	//sort => 정렬순서
 	_sort: 'createdAt',
 	_order: 'desc',
 	_limit: 6,
@@ -94,6 +95,7 @@ const {
 const isExists = computed(() => posts.value && posts.value.length > 0);
 
 //pagination
+//totalCount = 출력갯수
 const totalCount = computed(() => response.value.headers['x-total-count']);
 const pageCount = computed(() =>
 	Math.ceil(totalCount.value / params.value._limit),

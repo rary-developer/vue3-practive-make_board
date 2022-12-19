@@ -18,6 +18,9 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item">
+							<!-- RouterLink -->
+							<!-- 커스텀 컴포넌트 , 이를통해 페이지를 리로딩하지않고 url에 매핑된 페이지를 렌더링 -->
+							<!-- a태그는 리렌더링 -->
 							<RouterLink class="nav-link" active-class="active" to="/"
 								>Home</RouterLink
 							>

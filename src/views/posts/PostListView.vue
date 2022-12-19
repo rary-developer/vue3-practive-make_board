@@ -2,6 +2,17 @@
 	<div>
 		<h2>게시글 목록</h2>
 		<hr class="my-4" />
+		<!-- 
+			<div v-for="post in posts" :key="post.id" class="col-4" >
+				<PostItem
+					:title="post.title"
+					:content="post.content"
+					:created-at="post.createdAt"
+					@click="goPage(post.id)"
+				>
+				</PostItem>
+			</div> 
+		-->
 		<PostFilter
 			v-model:title="params.title_like"
 			:limit="params._limit"

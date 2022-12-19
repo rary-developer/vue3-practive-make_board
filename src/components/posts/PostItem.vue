@@ -24,13 +24,16 @@ import { inject } from 'vue';
 
 //props 선언 -> defineProps
 const props = defineProps({
+	//제목
 	title: {
 		type: String,
 		required: true,
 	},
+	//내용
 	content: {
 		type: String,
 	},
+	//생성일
 	createdAt: {
 		type: [String, Date, Number],
 	},

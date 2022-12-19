@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { createApp } from 'vue';
 import App from './App.vue';
-import router from '@/router';
+import router from '@/router'; //router - index.js에서 설정
 import objPlugins from './plugins/obj';
 import person from './plugins/person';
 import globalDirectives from './plugins/global-directives';

@@ -39,7 +39,6 @@ const routes = [
 		name: 'PostDetail',
 		//파라미터가 해당페이지에 props로 전달
 		props: true,
-
 		//객체 함수로도 전달가능
 		// props: route => {
 		// 	return {
@@ -55,7 +54,7 @@ const routes = [
 		component: PostEditView,
 	},
 	{
-		//정규식 표현을 사용하여 404페이지 출력
+		//정규식 표현을 사용하여 404페이지 출력(not found)
 		path: '/:pathMatch(.*)*',
 		name: 'NotFound',
 		component: NotFoundView,
@@ -67,7 +66,7 @@ const routes = [
 		//중첩된 route속성
 		children: [
 			{
-				path: '',
+				path: '', //home 빈값
 				name: 'NestedHome',
 				component: NestedHomeView,
 			},

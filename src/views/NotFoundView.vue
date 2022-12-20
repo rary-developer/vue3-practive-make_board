@@ -1,4 +1,8 @@
 <template>
+	<!--
+		404 not found 페이지
+		(잘못된 경로)
+	-->
 	<div class="text-center py-4">
 		<h1>Ooops!</h1>
 		<h2>404 Not Found</h2>

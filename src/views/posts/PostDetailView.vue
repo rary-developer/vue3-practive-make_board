@@ -60,6 +60,8 @@ import { useNumber } from '../../composables/number';
 //import { deletePost } from '../../api/posts';
 import { useAxios } from '../../hooks/useAxios';
 
+//defineProps => index.js(router)에서 보낸
+//props 속성 가져와서 사용하기
 const props = defineProps({
 	id: [String, Number],
 });
@@ -77,7 +79,7 @@ const { isOdd } = useNumber(idRef);
  *
  * reactive
  * 장) form.title, form.content
- * 단) 객체 할당 불가능
+ * 단) 객체 할당 불가능(주소값이 바뀜)
  */
 //let form = reactive({});
 // reactive로 선언하면 각자 할당해줘야한다

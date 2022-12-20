@@ -2,7 +2,10 @@
 	<div>
 		<ul class="nav nav-pills">
 			<li class="nav-item">
-				<!-- router.replace - history따라서 찾아간다 -->
+				<!-- 
+					router.replace - history따라서 찾아간다 
+					대체..
+				-->
 				<RouterLink
 					class="nav-link"
 					active-class="active"

@@ -1,4 +1,4 @@
-import { posts } from '.';
+import { posts } from 'axios';
 
 //json data 조회하는 페이지
 

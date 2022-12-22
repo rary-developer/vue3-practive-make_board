@@ -112,6 +112,8 @@ const pageCount = computed(() =>
 	Math.ceil(totalCount.value / params.value._limit),
 );
 
+// async await => promise 대신 사용하는 객체(읽기쉬운 문법)
+
 // const fetchPosts = async () => {
 // 	try {
 // 		loading.value = true;
